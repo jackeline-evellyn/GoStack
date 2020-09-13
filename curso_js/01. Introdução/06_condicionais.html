@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <script>
+           function retornaSexo(sexo){
+               //M, F
+               //Masculino, Feminino
+
+               if (sexo == 'M'){
+                   return 'Masculino';
+               } else if (sexo == 'F') {
+                   return 'Feminino';
+               }
+               else {
+                   return 'Gênero não Binário';
+               }
+           }
+
+           //Também é possivel fazer com Switch Case
+           function retornaLinguagem(extensaoLinguagem){
+               switch (extensaoLinguagem){
+                    case '.php':
+                        return 'Programa na linguagem PHP';
+                    case '.js':
+                        return 'Programa na linguagem JavaScript';
+                    default:
+                        return 'Programa em outra linguagem';
+        
+               }
+           }
+           var resultado = retornaSexo('F');
+           console.log(resultado);
+
+           var resultadoExtensao = retornaLinguagem('.js');
+           console.log(resultadoExtensao);
+        </script>
+    </body>
+</html>

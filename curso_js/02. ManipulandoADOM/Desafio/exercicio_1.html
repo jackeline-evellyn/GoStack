@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Exercicio 1</title>
+    </head>
+    <body>
+        <div id="app">
+            <button onclick="criarQuadrado()">Criar Novo Quadrado</button>
+            <div id="squares"></div>
+        </div>
+        <script>
+            function criarQuadrado(){
+                var boxElement = document.createElement('div');
+            
+                boxElement.style.width= 100;
+                boxElement.style.height= 100;
+                boxElement.style.backgroundColor= '#f00'; 
+
+                var containerElement = document.querySelector('#app');
+                containerElement.appendChild(boxElement);
+
+              
+            }
+        </script>
+    </body>
+</html>

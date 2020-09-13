@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Java Script</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="nome" id="nome" class="nome"/>
+        <input type="text" name="nome2" id="nome2" class="nome2"/>
+        <button class="botao"> Adicionar </button>
+    </div>
+    <script>
+    //    var inputElement = document.getElementById('nome');
+    //    var inputElement = document.getElementsByTagName('input')[0]; 
+    //    var inputElement = document.getElementsByClassName('nome')[0];
+
+    //Quando se sabe que haverá apenas um 'input', coloca-se o colchete -> [0]
+
+
+/********************************************************************
+   O elemento "querySelector" permite percorrer a árvore de elementos, 
+   realiza a mesma função de maneira simplificada que os anteriores 
+*********************************************************************/
+
+    // var inputElement = document.querySelectorAll('input');
+    //  var inputElement = document.querySelector('div#app input');
+    // console.log(inputElement);
+
+        var inputElement = document.querySelector('input[name=nome]');
+        var btnElement = document.querySelector('button.botao');
+
+        btnElement.onclick = function(){
+            var text = inputElement.value;
+            alert(text);
+        }
+       
+    </script>
+
+</body> 
+</html>
