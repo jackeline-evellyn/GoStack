@@ -1,11 +1,31 @@
 <html>
     <head>
         <meta charset='UTF-8'>
-        <title>Exercicio 1</title>
+        <title>Exercicio 4</title>
     </head>
     <body>
+        <ul></ul>
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+
         <script>
-            
+            var ulElement = document.querySelector('ul');
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+           
+            var texto = document.getElementsByName('nome');
+
+            for(nome of nomes){
+                var list = document.createElement('li');
+                var textElement = document.createTextNode(nome);
+
+                list.appendChild(textElement);
+                ulElement.appendChild(list);
+            }
+
+            function adicionar(){
+                var novoNome = text.value;
+                
+            }
         </script>
     </body>
 </html>

@@ -5,35 +5,39 @@
     </head>
     <body>
         <div id="app">
-            <button onclick="criarQuadrado()">Criar Novo Quadrado</button>
-            <div id="squares" onmouseover="getRandomColor()"></div>
+            <button id='newSquare'>Criar Novo Quadrado</button>
+            <div id="squares"></div>
         </div>
         <script>
-            var btnElement = document.getElementById('squares');
-
+            var btnElement = document.getElementById('newSquare');
+            var squaresElement = document.getElementById('squares');
+            
             function getRandomColor() {
                 var letters = "0123456789ABCDEF";
                 var color = "#";
                 for (var i = 0; i < 6; i++) {
                 color += letters[Math.floor(Math.random() * 16)];
                 }
-
                 return color;
                 }
                 var newColor = getRandomColor();
 
-            function criarQuadrado(){
-                var boxElement = document.createElement('div');
+            btnElement.onclick = function (){
+                var square = document.createElement('div');
             
-                boxElement.style.width= 100;
-                boxElement.style.height= 100;
-                boxElement.style.backgroundColor= newColor; 
+                square.style.width= 100;
+                square.style.height= 100;
+                square.style.backgroundColor= '#f00'; 
 
-                var containerElement = document.querySelector('#app');
-                containerElement.appendChild(boxElement);
+                square.onmouseover = function (){
+                    square.style.backgroundColor = getRandomColor();
+                }
 
+                squaresElement.appendChild(square);
               
             }
+            
+                
         </script>
     </body>
 </html>

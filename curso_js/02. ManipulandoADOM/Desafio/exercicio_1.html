@@ -5,20 +5,21 @@
     </head>
     <body>
         <div id="app">
-            <button onclick="criarQuadrado()">Criar Novo Quadrado</button>
+            <button id='newSquare'>Criar Novo Quadrado</button>
             <div id="squares"></div>
         </div>
         <script>
-            function criarQuadrado(){
-                var boxElement = document.createElement('div');
+            var btnElement = document.getElementById('newSquare');
+            var squaresElement = document.getElementById('squares');
+
+            btnElement.onclick = function (){
+                var square = document.createElement('div');
             
-                boxElement.style.width= 100;
-                boxElement.style.height= 100;
-                boxElement.style.backgroundColor= '#f00'; 
+                square.style.width= 100;
+                square.style.height= 100;
+                square.style.backgroundColor= '#f00'; 
 
-                var containerElement = document.querySelector('#app');
-                containerElement.appendChild(boxElement);
-
+                squaresElement.appendChild(square);
               
             }
         </script>
