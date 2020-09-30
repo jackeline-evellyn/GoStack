@@ -1,11 +1,39 @@
 <html>
     <head>
         <meta charset='UTF-8'>
-        <title>Exercicio 1</title>
+        <title>Exercicio 2</title>
     </head>
     <body>
+        <div id="app">
+            <button onclick="criarQuadrado()">Criar Novo Quadrado</button>
+            <div id="squares" onmouseover="getRandomColor()"></div>
+        </div>
         <script>
+            var btnElement = document.getElementById('squares');
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+
+                return color;
+                }
+                var newColor = getRandomColor();
+
+            function criarQuadrado(){
+                var boxElement = document.createElement('div');
             
+                boxElement.style.width= 100;
+                boxElement.style.height= 100;
+                boxElement.style.backgroundColor= newColor; 
+
+                var containerElement = document.querySelector('#app');
+                containerElement.appendChild(boxElement);
+
+              
+            }
         </script>
     </body>
 </html>

@@ -8,12 +8,13 @@
             <input id="nome">
         </div>
         <script>
-            var linkElement = document.createElement('a');
+            var linkElement = document.createElement('a'); // criou o elemento de link 
             linkElement.setAttribute('href', 'http://rocketseat.com.br');
             linkElement.setAttribute('title', 'Site da Rocketseat');
+            //configurou os atributos
 
             var textElement = document.createTextNode('Acessar site da Rocketseat');
-            linkElement.appendChild(textElement);
+            linkElement.appendChild(textElement); // Adicionou como filho do linkElement
             
             var containerElement = document.querySelector('#app');
             containerElement.appendChild(linkElement);
