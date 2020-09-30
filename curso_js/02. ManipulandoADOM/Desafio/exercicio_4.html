@@ -9,21 +9,26 @@
         <button onClick="adicionar()">Adicionar</button>
 
         <script>
-            var ulElement = document.querySelector('ul');
             var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            var ulElement = document.querySelector('ul');
+            var inputElement = document.querySelector('input');
+
+           function adicionarItem(text){
+             var list = document.createElement('li');
+             var textElement = document.createTextNode(text);
+
+             list.appendChild(textElement);
+             ulElement.appendChild(list);
+           }
            
-            var texto = document.getElementsByName('nome');
-
-            for(nome of nomes){
-                var list = document.createElement('li');
-                var textElement = document.createTextNode(nome);
-
-                list.appendChild(textElement);
-                ulElement.appendChild(list);
-            }
-
             function adicionar(){
-                var novoNome = text.value;
+                adicionarItem(inputElement.value);
+                inputElement.value = "";
+
+            }
+            for(nome of nomes){
+                adicionarItem(nome);
                 
             }
         </script>
