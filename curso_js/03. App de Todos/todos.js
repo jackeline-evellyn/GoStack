@@ -19,7 +19,11 @@ function renderTodos(){
         var todoText = document.createTextNode(todo);
 
         var linkElement = document.createElement('a');
-        linkElement.setAttribute('href', '#');       
+        linkElement.setAttribute('href', '#');      
+        
+        var posicao = todos.indexOf(todo); // posicao é o i, ou seja o contator/ posição
+        linkElement.setAttribute('onclick', 'deleteTodo('+ posicao +')');
+
         var linkText = document.createTextNode('Excluir');
 
         linkElement.appendChild(linkText);
@@ -42,3 +46,12 @@ function addTodo(){ //Função para adicionar novo todo
 }
 
 buttonElement.onclick = addTodo;
+
+function deleteTodo(posicao){
+    todos.splice(posicao, 1); // O metodo splice remove uma quantidade de itens do array
+                        // baseado na quantidade de itens que é passada
+
+                        //No caso, a partir da posição [pos] remova um item
+
+    renderTodos();
+}
