@@ -18,8 +18,10 @@ function listRepositories(){
 
     if(!user) return;
 
+
     axios.get('https://api.github.com/users/' + user + '/repos')
     .then(function(response){ 
         renderRepositories(response.data);
     })
+
 }
